@@ -70,4 +70,13 @@
       <TextArea fx:id="message_fld" prefHeight="70.0" prefWidth="200.0" />
       <Button fx:id="send_money_btn" mnemonicParsing="false" text="Send Money" />
    </VBox>
+   <Button layoutX="791.0" layoutY="50.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="22.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0">
+      <graphic>
+         <ImageView fx:id="dashboard_notif_btn" fitHeight="25.0" fitWidth="19.0">
+            <image>
+               <Image url="@../../Images/pngimg.com%20-%20bell_PNG53589.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
 </AnchorPane>
