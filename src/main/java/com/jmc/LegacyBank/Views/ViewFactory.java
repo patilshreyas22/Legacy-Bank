@@ -1,30 +1,46 @@
 package com.jmc.LegacyBank.Views;
 
+import com.jmc.LegacyBank.Controllers.Admin.AdminController;
 import com.jmc.LegacyBank.Controllers.Client.ClientController;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ViewFactory {
+    private AccountType loginAccountType;
 
     //Client Views
-    private final StringProperty clientSelectedMenuItem;
+    private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
+    private AnchorPane NotifView;
 
+    //Admin Views
+    private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
+    private AnchorPane createClientView;
+    private AnchorPane clientsView;
 
     public ViewFactory() {
-        this.clientSelectedMenuItem = new SimpleStringProperty("");
+        this.loginAccountType = AccountType.CLIENT;
+        this.clientSelectedMenuItem = new SimpleObjectProperty<>();
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
+    }
+
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
+    }
     /*
     *Client Views Section */
 
-    public StringProperty getClientSelectedMenuItem() {
+    public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem() {
         return clientSelectedMenuItem;
     }
         public AnchorPane getDashboardView(){
@@ -36,6 +52,18 @@ public class ViewFactory {
                 }
             }
             return dashboardView;
+        }
+
+        public AnchorPane getNotifView(){
+        if(NotifView == null){
+            try{
+                NotifView = new FXMLLoader(getClass().getResource("/Fxml/Client/Dashboard.fxml")).load();
+            }catch(Exception e){
+
+            }
+
+        }
+        return NotifView;
         }
 
     public AnchorPane getTransactionsView() {
@@ -59,10 +87,7 @@ public class ViewFactory {
         return accountsView;
     }
 
-    public void showLoginWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
-            createStage(loader);
-        }
+
         public void showClientWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Client/Client.fxml"));
         ClientController clientController = new ClientController();
@@ -70,6 +95,50 @@ public class ViewFactory {
             createStage(loader);
 
         }
+
+    /* Admin Views Section */
+
+        public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem() {
+            return adminSelectedMenuItem;
+        }
+
+        public AnchorPane getCreateClientView() {
+            if(createClientView == null){
+                try{
+                    createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient.fxml")).load();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+            return createClientView;
+        }
+
+        public AnchorPane getClientsView() {
+          if (clientsView == null){
+              try{
+                clientsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Clients.fxml")).load();
+              }catch(Exception e){
+                  e.printStackTrace();
+              }
+          }
+          return clientsView;
+        }
+
+
+
+        public void showAdminWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Admin.fxml"));
+        AdminController controller = new AdminController();
+        loader.setController(controller);
+        createStage(loader);
+    }
+
+
+
+    public void showLoginWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        createStage(loader);
+    }
 
     private void createStage(FXMLLoader loader) {
         Scene scene = null;

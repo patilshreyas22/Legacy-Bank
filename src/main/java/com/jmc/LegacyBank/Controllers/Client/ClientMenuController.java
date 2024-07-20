@@ -1,6 +1,7 @@
 package com.jmc.LegacyBank.Controllers.Client;
 
 import com.jmc.LegacyBank.Models.Model;
+import com.jmc.LegacyBank.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
@@ -25,16 +26,17 @@ public class ClientMenuController implements Initializable {
         dashboard_btn.setOnAction(event -> onDashboard());
         transaction_btn.setOnAction(event -> onTransactions());
         accounts_btn.setOnAction(event -> onAccounts());
+
     }
 
     private void onDashboard(){
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Dashboard");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.DASHBOARD);
     }
     private void onTransactions(){
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.TRANSACTIONS);
     }
 
     private void onAccounts(){
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Accounts");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
 }

@@ -3,6 +3,7 @@ package com.jmc.LegacyBank.Controllers.Client;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import java.net.URL;
@@ -23,6 +24,10 @@ public class DashboardController implements Initializable {
     public TextArea message_fld;
     public Button send_money_btn;
     public ImageView dashboard_notif_btn;
+    public Tooltip notif_btn_tooltip;
+    public AnchorPane notification_popover;
+    public ListView notification_list;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

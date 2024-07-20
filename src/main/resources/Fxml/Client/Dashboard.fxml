@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -74,9 +75,16 @@
       <graphic>
          <ImageView fx:id="dashboard_notif_btn" fitHeight="25.0" fitWidth="19.0">
             <image>
-               <Image url="@../../Images/pngimg.com%20-%20bell_PNG53589.png" />
+               <Image url="@../../Images/bell.png" />
             </image>
          </ImageView>
       </graphic>
+      <tooltip>
+         <Tooltip fx:id="notif_btn_tooltip" text="This is a notification from the Admin" />
+      </tooltip>
    </Button>
+   <AnchorPane fx:id="notification_popover" layoutX="600.0" layoutY="80.0" prefHeight="150.0" prefWidth="200.0" styleClass="notification_popover" visible="false" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="80.0">
+      <Label text="Notifications" />
+      <ListView fx:id="notification_list" prefHeight="120.0" prefWidth="180.0" />
+   </AnchorPane>
 </AnchorPane>
