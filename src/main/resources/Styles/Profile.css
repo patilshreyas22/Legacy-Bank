@@ -39,7 +39,14 @@ Label {
 #changePasswordLabel,
 #currentPasswordLabel,
 #newPasswordLabel {
-    -fx-spacing: 10px;
+    -fx-text-fill: #666; /* Faint color */
+}
+
+#nameValue,
+#passwordValue,
+#payeeAddressValue,
+#lastLoginValue {
+    -fx-font-weight: bold; /* Bold client details */
 }
 
 #currentPasswordField,
