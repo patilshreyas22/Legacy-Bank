@@ -1,0 +1,65 @@
+/* Profile.css */
+
+/* Define color variables directly */
+.background-color {
+    -fx-background-color: #f4f4f4;
+}
+
+.header-color {
+    -fx-text-fill: #004d99;
+}
+
+.text-color {
+    -fx-text-fill: #333;
+}
+
+.label-spacing {
+    -fx-spacing: 10px;
+}
+
+AnchorPane {
+    -fx-background-color: #f4f4f4;
+}
+
+Label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+#profileTitle {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #004d99;
+}
+
+#nameLabel,
+#passwordLabel,
+#payeeAddressLabel,
+#lastLoginLabel,
+#changePasswordLabel,
+#currentPasswordLabel,
+#newPasswordLabel {
+    -fx-spacing: 10px;
+}
+
+#currentPasswordField,
+#newPasswordField {
+    -fx-pref-width: 200px;
+}
+
+#changePasswordButton {
+    -fx-background-color: #004d99;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+}
+
+#changePasswordButton:hover {
+    -fx-background-color: #003366;
+}
+
+/* Adjust opacity for specific labels */
+#lastLoginLabel,
+#lastLoginValue {
+    -fx-opacity: 0.7; /* Adjust opacity to make it less intense */
+}

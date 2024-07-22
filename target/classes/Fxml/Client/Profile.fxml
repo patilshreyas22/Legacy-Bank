@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/Profile.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.LegacyBank.Controllers.Client.ProfileController">
+    <children>
+        <Label fx:id="profileTitle" layoutX="322.0" layoutY="30.0" prefHeight="30.0" prefWidth="208.0" text="Profile Information" AnchorPane.topAnchor="30.0">
+            <graphic>
+                <FontAwesomeIcon glyphName="USER" />
+            </graphic>
+        </Label>
+        <Label fx:id="nameLabel" layoutX="300.0" layoutY="163.0" text="Name :" AnchorPane.leftAnchor="300.0" />
+        <Label fx:id="nameValue" layoutX="366.0" layoutY="163.0" text="Shreyas Patil" />
+        <Label fx:id="passwordLabel" layoutX="282.0" layoutY="198.0" text="Password:" />
+        <Label fx:id="passwordValue" layoutX="366.0" layoutY="198.0" text="********" />
+        <Label fx:id="payeeAddressLabel" layoutX="250.0" layoutY="234.0" text="Payee Address : " />
+        <Label fx:id="lastLoginLabel" layoutX="22.0" layoutY="35.0" text="Last Login:" />
+        <Label fx:id="lastLoginValue" layoutX="95.0" layoutY="35.0" text="22-07-2024 , 17:52" />
+        <Label fx:id="changePasswordLabel" layoutX="235.0" layoutY="274.0" text="Change Password?" />
+        <Label fx:id="currentPasswordLabel" layoutX="235.0" layoutY="318.0" text="Current Password :" />
+        <PasswordField fx:id="currentPasswordField" layoutX="366.0" layoutY="315.0" />
+        <Label fx:id="newPasswordLabel" layoutX="251.0" layoutY="365.0" text="New Password :" />
+        <PasswordField fx:id="newPasswordField" layoutX="366.0" layoutY="362.0" />
+        <Button fx:id="changePasswordButton" layoutX="291.0" layoutY="414.0" mnemonicParsing="false" text="Change Password" />
+      <Label layoutX="366.0" layoutY="236.0" text="\@Spatil97" />
+    </children>
+</AnchorPane>

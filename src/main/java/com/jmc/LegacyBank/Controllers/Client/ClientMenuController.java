@@ -2,9 +2,14 @@ package com.jmc.LegacyBank.Controllers.Client;
 
 import com.jmc.LegacyBank.Models.Model;
 import com.jmc.LegacyBank.Views.ClientMenuOptions;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,21 +27,26 @@ public class ClientMenuController implements Initializable {
         addListeners();
     }
 
-    private void addListeners(){
+    private void addListeners() {
         dashboard_btn.setOnAction(event -> onDashboard());
         transaction_btn.setOnAction(event -> onTransactions());
         accounts_btn.setOnAction(event -> onAccounts());
-
+        profile_btn.setOnAction(event -> onProfile());
     }
 
-    private void onDashboard(){
+    private void onDashboard() {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.DASHBOARD);
     }
-    private void onTransactions(){
+
+    private void onTransactions() {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.TRANSACTIONS);
     }
 
-    private void onAccounts(){
+    private void onAccounts() {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
+    private void onProfile() {
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.PROFILE); // Added profile action
+    }
+
 }

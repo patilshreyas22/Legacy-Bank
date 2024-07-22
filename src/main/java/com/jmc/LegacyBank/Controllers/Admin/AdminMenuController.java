@@ -26,6 +26,9 @@ public class AdminMenuController implements Initializable {
         clients_btn.setOnAction(e-> {
             onClients();
         });
+        deposit_btn.setOnAction(e-> {
+            onDeposit();
+        });
     }
 
     private void onCreateClient(){
@@ -34,5 +37,9 @@ public class AdminMenuController implements Initializable {
 
     private void onClients(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CLIENTS);
+    }
+
+    private void onDeposit(){
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
     }
 }

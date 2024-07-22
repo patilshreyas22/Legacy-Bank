@@ -1,10 +1,9 @@
-module com.jmc.mazebank {
+module com.jmc.LegacyBank {
     requires javafx.controls;
     requires javafx.fxml;
-    requires de.jensd.fx.glyphs.fontawesome;
     requires java.sql;
     requires org.xerial.sqlitejdbc;
-
+    requires fontawesomefx;
 
 
     opens com.jmc.LegacyBank to javafx.fxml;
@@ -14,4 +13,6 @@ module com.jmc.mazebank {
     exports com.jmc.LegacyBank.Controllers.Client;
     exports com.jmc.LegacyBank.Models;
     exports com.jmc.LegacyBank.Views;
+
+
 }

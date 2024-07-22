@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane prefHeight="50.0" prefWidth="750.0" styleClass="client_cell_container" stylesheets="@../../Styles/ClientCell.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.LegacyBank.Controllers.Client.ClientCellController">
+   <children>
+      <FontAwesomeIcon glyphName="USER" layoutX="28.0" layoutY="29.0" size="20" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <HBox layoutX="83.0" layoutY="-16.0" prefHeight="40.0" prefWidth="550.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Label fx:id="fName_lbl" text="Aditya" />
+            <Label fx:id="lName_lbl" text="Patil" />
+            <Label fx:id="pAddress_lbl" text="\@APatil1" />
+            <Label fx:id="ch_acc_lbl" styleClass="acc_display_lbl" text="25469921" />
+            <Label fx:id="sv_acc_lbl" styleClass="acc_display_lbl" text="23330213" />
+            <Label fx:id="date_lbl" text="20-07-2024" />
+         </children>
+      </HBox>
+      <Button fx:id="delete_btn" layoutX="674.0" layoutY="12.0" mnemonicParsing="false" styleClass="delete_btn" text="Delete" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+         <graphic>
+            <FontAwesomeIcon glyphName="CLOSE" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
