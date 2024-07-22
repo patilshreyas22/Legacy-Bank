@@ -4,6 +4,7 @@ import com.jmc.LegacyBank.Models.Model;
 import com.jmc.LegacyBank.Views.AdminMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,6 +30,9 @@ public class AdminMenuController implements Initializable {
         deposit_btn.setOnAction(e-> {
             onDeposit();
         });
+        logout_btn.setOnAction(e-> {
+            onLogout();
+        });
     }
 
     private void onCreateClient(){
@@ -41,5 +45,11 @@ public class AdminMenuController implements Initializable {
 
     private void onDeposit(){
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.DEPOSIT);
+    }
+    private void onLogout() {
+        Stage stage = (Stage) clients_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
+        Model.getInstance().setAdminLoginSuccessFlag(false);
     }
 }

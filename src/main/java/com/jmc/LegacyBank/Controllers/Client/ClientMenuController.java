@@ -32,6 +32,7 @@ public class ClientMenuController implements Initializable {
         transaction_btn.setOnAction(event -> onTransactions());
         accounts_btn.setOnAction(event -> onAccounts());
         profile_btn.setOnAction(event -> onProfile());
+        logout_btn.setOnAction(event -> onLogout());
     }
 
     private void onDashboard() {
@@ -47,6 +48,12 @@ public class ClientMenuController implements Initializable {
     }
     private void onProfile() {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.PROFILE); // Added profile action
+    }
+    private void onLogout() {
+        Stage stage = (Stage) dashboard_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
+        Model.getInstance().setClientLoginSuccessFlag(false);
     }
 
 }
