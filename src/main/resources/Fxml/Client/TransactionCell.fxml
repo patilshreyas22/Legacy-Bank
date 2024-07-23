@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -20,4 +21,9 @@
           <FontAwesomeIcon fill="WHITE" glyphName="RUPEE" selectionFill="#fffcfc" styleClass="trans_amount_lbl" />
         </graphic>
     </Label>
+   <Button fx:id="message_btn" layoutX="437.0" layoutY="18.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="44.0" styleClass="message_btn">
+      <graphic>
+         <FontAwesomeIcon glyphName="BELL" />
+      </graphic>
+   </Button>
 </AnchorPane>

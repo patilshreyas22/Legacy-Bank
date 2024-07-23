@@ -1,6 +1,6 @@
 package com.jmc.LegacyBank.Views;
 
-import com.jmc.LegacyBank.Controllers.Client.ClientCellController;
+import com.jmc.LegacyBank.Controllers.Admin.ClientCellController;
 import com.jmc.LegacyBank.Models.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;

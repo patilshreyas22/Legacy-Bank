@@ -2,12 +2,18 @@ package com.jmc.LegacyBank.Views;
 
 import com.jmc.LegacyBank.Controllers.Admin.AdminController;
 import com.jmc.LegacyBank.Controllers.Client.ClientController;
+
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ViewFactory {
@@ -19,7 +25,7 @@ public class ViewFactory {
     private AnchorPane transactionsView;
     private AnchorPane accountsView;
     private AnchorPane profileView;
-    private AnchorPane NotifView;
+
 
     // Admin Views
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
@@ -59,16 +65,7 @@ public class ViewFactory {
         return dashboardView;
     }
 
-    public AnchorPane getNotifView() {
-        if (NotifView == null) {
-            try {
-                NotifView = new FXMLLoader(getClass().getResource("/Fxml/Client/Dashboard.fxml")).load();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return NotifView;
-    }
+
 
     public AnchorPane getTransactionsView() {
         if (transactionsView == null) {
@@ -163,6 +160,25 @@ public class ViewFactory {
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
+    }
+
+    public void showMessageWindow(String pAddress , String messageText){
+        StackPane pane = new StackPane();
+        VBox box = new VBox(5);
+        box.setAlignment(Pos.CENTER);
+        Label sender = new Label(pAddress);
+        Label message = new Label(messageText);
+        box.getChildren().addAll(sender , message);
+        pane.getChildren().add(box);
+        Scene scene = new Scene(pane , 300 , 100);
+        Stage stage = new Stage();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/bank_PNG20.png")));
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Message");
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     private void createStage(FXMLLoader loader) {

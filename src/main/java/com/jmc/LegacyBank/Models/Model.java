@@ -158,6 +158,8 @@ public class Model {
         }
     }
 
+
+
     public ObservableList<Client> searchClient(String pAddress){
         ObservableList<Client> searchResults = FXCollections.observableArrayList();
         ResultSet resultSet = databaseDriver.searchClient(pAddress);

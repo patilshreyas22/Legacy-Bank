@@ -18,4 +18,9 @@ public class CheckingAccount extends Account {
         return this.transactionLimit;
     }
 
+    @Override
+    public String toString(){
+        return accountNumberProperty().get();
+    }
+
 }
